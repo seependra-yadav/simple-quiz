@@ -1,0 +1,135 @@
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #E3F2FD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main Quiz Box */
+.quiz-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 8px 14px #212121;
+}
+
+/* Heading */
+h1 {
+    border-bottom: 3px solid gray;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* Question + Answers Area */
+.qna-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ans-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.ans-box {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+
+/* Answer Buttons */
+.ans-box {
+    width: 100%;
+    border: 2px solid #4285F4;
+    margin: 8px 0;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.ans-box:hover:not([disabled]) {
+    background-color: #404040;
+    color: white;
+}
+
+.ans-box:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Correct & Incorrect */
+.correct {
+    background-color: #0F9D58;
+    color: white;
+}
+
+.incorrect {
+    background-color: #D64161;
+    color: white;
+}
+
+/* Next Button */
+.next-btn {
+    margin: 15px auto 0;
+    display: block;
+    background-color: #4285F4;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    width: 60%;
+    max-width: 180px;
+    border-radius: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+/* ------------------ */
+/* Tablet Screens */
+@media (min-width: 600px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .ans-box {
+        font-size: 1.05rem;
+    }
+}
+
+/* Desktop Screens */
+@media (min-width: 992px) {
+    .quiz-container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .ans-box {
+        font-size: 1.1rem;
+    }
+}
