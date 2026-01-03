@@ -157,10 +157,10 @@ function showQuestion(){
     let questionNo = currQuestionidx + 1;
 
     questionElement.innerText = questionNo + ". " + currQuestion.question;
-
+// track qustion number---------------------------------------------------------------------
     currQuestion.answers.forEach(answer => {
         let button = document.createElement("button");
-        button.textContent = answer.text; // 🔥 FIX HERE
+        button.textContent = answer.text; 
         button.classList.add("ans-box");
 
         if(answer.correct){
@@ -181,7 +181,7 @@ function resetState(){
             ansBtn.removeChild(ansBtn.firstChild);
         }
 }
-
+//fetch ans-------------------------------------------------------------------------------
 function selectAns(e){
     let selectedBtn = e.target;
     let isCorrect = selectedBtn.dataset.correct === "true";
@@ -194,7 +194,7 @@ function selectAns(e){
         selectedBtn.classList.add("incorrect");
 
     }
-
+//ans check------------------------------------------------------------------------------
      Array.from(ansBtn.children).forEach(button => {
         if (button.dataset.correct === "true") {
             button.classList.add("correct");
@@ -204,14 +204,14 @@ function selectAns(e){
 
     nextBtn.style.display = "block";
 }
-
+//score---------------------------------------------------------------------------------------
 function showScore(){
     resetState();
     questionElement.innerHTML =`You scored ${score} out of ${questions.length}!`;
     nextBtn.innerHTML = "play Again";
     nextBtn.style.display = "block";
 }
-
+//question changed------------------------------------------------------------------------------
  function handleNextBtn(){
     currQuestionidx++;
     if(currQuestionidx < questions.length){
